@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EnergyLoss
 {
-    enum BuildingType
+    public enum BuildingType
     {
         fullyProtected,
         unProtected,

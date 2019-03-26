@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EnergyLoss
 {
-    enum Country
+    public enum Country
     {
         normal,
         windy

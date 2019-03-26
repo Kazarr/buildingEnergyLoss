@@ -8,6 +8,8 @@ namespace EnergyLoss
 {
     class Wall : Construction
     {
+        public Wall(List<IMaterial> materials, string name)  :base(materials,name)
+        { }
 
     }
 }

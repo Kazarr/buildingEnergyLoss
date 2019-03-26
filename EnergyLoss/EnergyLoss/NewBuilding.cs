@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace EnergyLoss
 {
-    public partial class Form1 : Form
+    public partial class NewBuilding : Form
     {
-        public Form1()
+        public NewBuilding()
         {
             InitializeComponent();
-        }
-
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btn_NewBuilding_Click(object sender, EventArgs e)
-        {
-            using()
         }
     }
 }

@@ -8,5 +8,7 @@ namespace EnergyLoss
 {
     class Roof : Construction
     {
+        public Roof(List<IMaterial> materials, string name) :base(materials,name)
+        {        }
     }
 }

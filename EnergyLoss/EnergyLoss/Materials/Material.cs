@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EnergyLoss
+namespace EnergyLoss.Materials
 {
-    class GlassWool : IMaterial
+    class Material : IMaterial
     {
+        public double ThermalResistance => Thickness/Lambda;
+
         public double Thickness { get; set; }
         public string Name { get; set; }
         public double Lambda { get; set; }
-
-        public double ThermalResistance => Thickness / Lambda;
     }
 }
