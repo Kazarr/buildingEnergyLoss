@@ -6,13 +6,32 @@ using System.Threading.Tasks;
 
 namespace EnergyLoss
 {
-    public abstract class Construction : ISurface
+    public class Construction : ISurface
     {
-        public List<Material> Material { get;set; }
+        private double _lenght;
+        private double _width;
+        public string Name { get; set; }
+        private List<IMaterial> _materials;
 
+        public Construction(List<IMaterial> materials, string name)
+        {
+            _materials = materials;
+            Name = name;
+        }
+        public double GetThermalResistance()
+        {
+            double result = 0;
+            double materialThermalResistance = 0;
+            foreach(IMaterial m in _materials)
+            {
+                materialThermalResistance += m.ThermalResistance;
+            }
+            return result = 1 / materialThermalResistance;
+        }
         public double GetSurface()
         {
-            throw new NotImplementedException();
+            return _lenght * _width;
         }
+
     }
 }

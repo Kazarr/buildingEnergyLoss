@@ -49,7 +49,6 @@
     <Compile Include="Author.cs" />
     <Compile Include="Building.cs" />
     <Compile Include="Enum\BuildingType.cs" />
-    <Compile Include="Parents\Material.cs" />
     <Compile Include="Materials\Concrete.cs" />
     <Compile Include="Parents\Construction.cs" />
     <Compile Include="Enum\Country.cs" />

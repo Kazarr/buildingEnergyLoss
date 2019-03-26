@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace EnergyLoss
 {
-    class GlassWool : Material
+    class GlassWool : IMaterial
     {
+        public double Thickness { get; set; }
+        public string Name { get; set; }
+        public double Lambda { get; set; }
 
+        public double ThermalResistance => Thickness / Lambda;
     }
 }

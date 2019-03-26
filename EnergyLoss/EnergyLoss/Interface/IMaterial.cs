@@ -8,8 +8,9 @@ namespace EnergyLoss
 {
     public interface IMaterial
     {
-        double Thickness();
-        string GetName();
-        double Lambda();
+        double ThermalResistance { get; }
+        double Thickness { get; set; }
+        string Name { get; set; }
+        double Lambda { get; set; }
     }
 }
