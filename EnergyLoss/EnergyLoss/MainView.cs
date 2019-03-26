@@ -34,7 +34,12 @@ namespace EnergyLoss
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            //_mainViewModel.RoofMaterialId.Add((Material)cmb_RoofMaterial1.SelectedValue);
+            _mainViewModel.RoofMaterial.Add((Material)cmb_RoofMaterial1.SelectedValue);
+            _mainViewModel.RoofMaterial.Add((Material)cmb_RoofMaterial2.SelectedValue);
+            _mainViewModel.RoofMaterial.Add((Material)cmb_RoofMaterial3.SelectedValue);
+            _mainViewModel.RoofMaterial.Add((Material)cmb_RoofMaterial4.SelectedValue);
+
+            MessageBox.Show($"{}");
         }
 
         private void AddToCombos(List<Material> materials)
