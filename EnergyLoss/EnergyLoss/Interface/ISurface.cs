@@ -8,9 +8,6 @@ namespace EnergyLoss
 {
     public interface ISurface 
     {
-        double GetArea();
-
-
-
+        double GetSurface();
     }
 }

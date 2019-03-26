@@ -8,9 +8,12 @@ namespace EnergyLoss
 {
     public abstract class Construction : ISurface
     {
-        public abstract IMaterial Material { get;set; }
+        public Material Material { get;set; }
 
-        public abstract double GetArea();
+        public virtual double GetSurface()
+        {
+
+        }
 
     }
 }
