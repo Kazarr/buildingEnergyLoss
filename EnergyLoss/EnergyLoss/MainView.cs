@@ -41,19 +41,19 @@ namespace EnergyLoss
         {
             foreach(Material m in materials)
             {
-                cmb_RoofMaterial1.Items.Add(m);
+                cmb_RoofMaterial1.Items.Add(m.Name);
             } //comboboxy od jedna do dva.
             foreach(Material m in materials)
             {
-                cmb_RoofMaterial2.Items.Add(m);
+                cmb_RoofMaterial2.Items.Add(m.Name);
             }
             foreach (Material m in materials)
             {
-                cmb_RoofMaterial3.Items.Add(m);
+                cmb_RoofMaterial3.Items.Add(m.Name);
             }
             foreach (Material m in materials)
             {
-                cmb_RoofMaterial4.Items.Add(m);
+                cmb_RoofMaterial4.Items.Add(m.Name);
             }
         }
     }
