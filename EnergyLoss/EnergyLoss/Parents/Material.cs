@@ -12,17 +12,19 @@ namespace EnergyLoss
         public double Lenght { get; set; }
         public double Width { get; set; }
 
-
-        public virtual string GetName()
+        public string GetName()
         {
-
+            throw new NotImplementedException();
         }
 
-
-        public virtual double Thickness()
+        public double Thickness()
         {
-
+            throw new NotImplementedException();
         }
 
+        double IMaterial.Lambda()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

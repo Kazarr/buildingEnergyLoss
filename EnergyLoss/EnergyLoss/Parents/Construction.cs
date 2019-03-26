@@ -8,12 +8,11 @@ namespace EnergyLoss
 {
     public abstract class Construction : ISurface
     {
-        public Material Material { get;set; }
+        public List<Material> Material { get;set; }
 
-        public virtual double GetSurface()
+        public double GetSurface()
         {
-
+            throw new NotImplementedException();
         }
-
     }
 }

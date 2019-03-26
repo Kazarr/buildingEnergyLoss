@@ -10,5 +10,6 @@ namespace EnergyLoss
     {
         double Thickness();
         string GetName();
+        double Lambda();
     }
 }
