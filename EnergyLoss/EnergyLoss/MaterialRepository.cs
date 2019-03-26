@@ -7,9 +7,9 @@ using EnergyLoss.Materials;
 
 namespace EnergyLoss
 {
-    class MaterialRepository : IMaterialRepository
+    public class MaterialRepository : IMaterialRepository
     {
-        public List<Material> GetMaterials()
+        public static List<Material> GetMaterials()
         {
             var list = new List<Material>()
             {

@@ -4,17 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EnergyLoss.Materials;
 
 namespace EnergyLoss
 {
     public class MainViewModel
     {
-        public List<int> RoofMaterialId { get; set; } = new List<int>();
-        public List<double> RoofMaterialsThickness { get; set; } = new List<double>();
-        public List<int> WallMaterialId { get; set; } = new List<int>();
-        public List<double> WallMaterialsThickness { get; set; } = new List<double>();
-        public List<int> FloorMaterialId { get; set; } = new List<int>();
-        public List<double> FloorMaterialsThickness { get; set; } = new List<double>();
+        public List<Material> RoofMaterial { get; set; } = new List<Material>();
+        public List<Material> WallMaterial { get; set; } = new List<Material>();
+        public List<Material> FloorMaterial { get; set; } = new List<Material>();
 
 
 
