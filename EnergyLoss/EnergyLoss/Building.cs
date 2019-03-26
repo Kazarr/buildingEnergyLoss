@@ -13,6 +13,6 @@ namespace EnergyLoss
         private Country _country;
         private BuildingType _buildingType;
         private double _outsideTemp;
-        private 
+        //private 
     }
 }

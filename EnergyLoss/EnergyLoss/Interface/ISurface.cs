@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace EnergyLoss
 {
-    class DryWall : IMaterial
+    public interface ISurface 
     {
+        double GetArea();
+
+
+
     }
 }

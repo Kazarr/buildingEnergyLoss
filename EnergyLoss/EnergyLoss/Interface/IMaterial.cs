@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace EnergyLoss
 {
-    class Construction : ISurface
+    public interface IMaterial
     {
-
+        double Thickness();
+        string GetName();
+        double GetLambda(double outSideTemp, double inSideTemp);
     }
 }
