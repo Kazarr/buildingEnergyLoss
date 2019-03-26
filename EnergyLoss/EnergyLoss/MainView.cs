@@ -10,10 +10,12 @@ using System.Windows.Forms;
 
 namespace EnergyLoss
 {
-    public partial class Form1 : Form
+    public partial class MainView : Form
     {
-        public Form1()
+        private MainViewModel _mainViewModel;
+        public MainView(MainViewModel mainViewModel)
         {
+            _mainViewModel = mainViewModel;
             InitializeComponent();
         }
 
@@ -24,7 +26,11 @@ namespace EnergyLoss
 
         private void btn_NewBuilding_Click(object sender, EventArgs e)
         {
-            using()
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            //_mainViewModel.RoofMaterialId.Add(cmb_RoofMaterial1.SelectedValue = nameof(MaterialRepository.GetMaterials()));
         }
     }
 }

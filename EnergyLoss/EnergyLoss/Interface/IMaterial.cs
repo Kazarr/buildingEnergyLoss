@@ -8,7 +8,7 @@ namespace EnergyLoss
 {
     public interface IMaterial
     {
-        double ThermalResistance { get; }
+        double ThermalResistance { get; } //preco property?
         double Thickness { get; set; }
         string Name { get; set; }
         double Lambda { get; set; }
