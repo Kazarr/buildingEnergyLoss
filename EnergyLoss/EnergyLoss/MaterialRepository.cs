@@ -9,18 +9,34 @@ namespace EnergyLoss
 {
     public class MaterialRepository : IMaterialRepository
     {
-        public static List<Material> GetMaterials()
+        private List<Material> _materials = new List<Material>()
         {
-            var list = new List<Material>()
-            {
-                new Material("concrete", 1.3),
-                new Material("plaster", 0.15),
-                new Material("dry wall", 0.22),
-                new Material("ytong", 0.9),
-                new Material("glass wool", 0.37),
-                new Material("polystyrene", 0.31)
+            new Material("concrete", 1.03),
+            new Material("plaster", 0.15),
+            new Material("dry wall", 0.22),
+            new Material("ytong", 0.09),
+            new Material("glass wool", 0.037),
+            new Material("polystyrene", 0.031)
         };
-            return list;
+
+        public List<Material> GetMaterials()
+        {
+            return _materials;
+        }
+        public Material CreateMaterial(int ID, double thickness)
+        {
+            Material ret = new Material();
+            foreach(Material m in _materials)
+            {
+                if (ID == m.ID)
+                {
+                    ret.Name = m.Name;
+                    ret.Lambda = m.Lambda;
+                    ret.Thickness = thickness;
+                    break;
+                }
+            }
+            return ret;
         }
     }
 }

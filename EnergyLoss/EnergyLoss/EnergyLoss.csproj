@@ -49,7 +49,7 @@
     <Compile Include="Author.cs" />
     <Compile Include="Building.cs" />
     <Compile Include="Enum\BuildingType.cs" />
-    <Compile Include="IMaterialRepository.cs" />
+    <Compile Include="Interface\IMaterialRepository.cs" />
     <Compile Include="MaterialRepository.cs" />
     <Compile Include="Materials\Material.cs" />
     <Compile Include="NewBuilding.cs">

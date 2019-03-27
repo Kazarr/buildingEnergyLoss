@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EnergyLoss.Materials;
 
 namespace EnergyLoss
 {
     public class Floor : Construction
     {
-        public Floor(List<IMaterial> materials, string name) : base(materials, name)
+        public Floor(List<Material> materials, string name, double lenght, double width) : base(materials, name, lenght, width)
         {        }
+
     }
 }

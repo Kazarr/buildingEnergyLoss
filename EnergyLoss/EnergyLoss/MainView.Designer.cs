@@ -28,25 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
-            this.btn_NewBuilding = new System.Windows.Forms.Button();
             this.btn_LoadBuilding = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.tb_Constructions = new System.Windows.Forms.TabControl();
             this.tb_Roof = new System.Windows.Forms.TabPage();
+            this.lbl_RoofLenght = new System.Windows.Forms.Label();
+            this.txt_RoofLenght = new System.Windows.Forms.TextBox();
+            this.lbl_RoofWidth = new System.Windows.Forms.Label();
+            this.txt_RoofWidth = new System.Windows.Forms.TextBox();
+            this.btn_SaveRoof = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_Thickness2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_Thickness3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Thickness4 = new System.Windows.Forms.TextBox();
             this.cmb_RoofMaterial4 = new System.Windows.Forms.ComboBox();
             this.cmb_RoofMaterial3 = new System.Windows.Forms.ComboBox();
             this.cmb_RoofMaterial2 = new System.Windows.Forms.ComboBox();
             this.lbl_Thickness = new System.Windows.Forms.Label();
-            this.txt_Thickness = new System.Windows.Forms.TextBox();
+            this.txt_Thickness1 = new System.Windows.Forms.TextBox();
             this.cmb_RoofMaterial1 = new System.Windows.Forms.ComboBox();
             this.tb_Wall = new System.Windows.Forms.TabPage();
+            this.lbl_WallLenght = new System.Windows.Forms.Label();
+            this.txt_WallLenght = new System.Windows.Forms.TextBox();
+            this.lbl_WallWidth = new System.Windows.Forms.Label();
+            this.txt_WallWidth = new System.Windows.Forms.TextBox();
+            this.btn_SaveWall = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,6 +68,11 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.tb_Floor = new System.Windows.Forms.TabPage();
+            this.lbl_FloorLenght = new System.Windows.Forms.Label();
+            this.txt_FloorLenght = new System.Windows.Forms.TextBox();
+            this.lbl_FloorWidth = new System.Windows.Forms.Label();
+            this.txt_FloorWidth = new System.Windows.Forms.TextBox();
+            this.btn_FloorSave = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -72,26 +85,19 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_Calculate = new System.Windows.Forms.Button();
+            this.lbl_Constructions = new System.Windows.Forms.Label();
+            this.rtb_Constructions = new System.Windows.Forms.RichTextBox();
+            this.btn_CreateConstruction = new System.Windows.Forms.Button();
             this.tb_Constructions.SuspendLayout();
             this.tb_Roof.SuspendLayout();
             this.tb_Wall.SuspendLayout();
             this.tb_Floor.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_NewBuilding
-            // 
-            this.btn_NewBuilding.Location = new System.Drawing.Point(34, 72);
-            this.btn_NewBuilding.Name = "btn_NewBuilding";
-            this.btn_NewBuilding.Size = new System.Drawing.Size(79, 23);
-            this.btn_NewBuilding.TabIndex = 0;
-            this.btn_NewBuilding.Text = "New Building";
-            this.btn_NewBuilding.UseVisualStyleBackColor = true;
-            this.btn_NewBuilding.Click += new System.EventHandler(this.btn_NewBuilding_Click);
-            // 
             // btn_LoadBuilding
             // 
-            this.btn_LoadBuilding.Location = new System.Drawing.Point(34, 116);
+            this.btn_LoadBuilding.Location = new System.Drawing.Point(12, 296);
             this.btn_LoadBuilding.Name = "btn_LoadBuilding";
             this.btn_LoadBuilding.Size = new System.Drawing.Size(79, 23);
             this.btn_LoadBuilding.TabIndex = 1;
@@ -100,7 +106,7 @@
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(34, 187);
+            this.btn_exit.Location = new System.Drawing.Point(12, 338);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(79, 23);
             this.btn_exit.TabIndex = 2;
@@ -113,34 +119,80 @@
             this.tb_Constructions.Controls.Add(this.tb_Roof);
             this.tb_Constructions.Controls.Add(this.tb_Wall);
             this.tb_Constructions.Controls.Add(this.tb_Floor);
-            this.tb_Constructions.Location = new System.Drawing.Point(222, 27);
+            this.tb_Constructions.Location = new System.Drawing.Point(151, 0);
             this.tb_Constructions.Name = "tb_Constructions";
             this.tb_Constructions.SelectedIndex = 0;
-            this.tb_Constructions.Size = new System.Drawing.Size(646, 262);
+            this.tb_Constructions.Size = new System.Drawing.Size(437, 262);
             this.tb_Constructions.TabIndex = 3;
             // 
             // tb_Roof
             // 
-            this.tb_Roof.Controls.Add(this.btn_Save);
+            this.tb_Roof.Controls.Add(this.lbl_RoofLenght);
+            this.tb_Roof.Controls.Add(this.txt_RoofLenght);
+            this.tb_Roof.Controls.Add(this.lbl_RoofWidth);
+            this.tb_Roof.Controls.Add(this.txt_RoofWidth);
+            this.tb_Roof.Controls.Add(this.btn_SaveRoof);
             this.tb_Roof.Controls.Add(this.label3);
-            this.tb_Roof.Controls.Add(this.textBox3);
+            this.tb_Roof.Controls.Add(this.txt_Thickness2);
             this.tb_Roof.Controls.Add(this.label2);
-            this.tb_Roof.Controls.Add(this.textBox2);
+            this.tb_Roof.Controls.Add(this.txt_Thickness3);
             this.tb_Roof.Controls.Add(this.label1);
-            this.tb_Roof.Controls.Add(this.textBox1);
+            this.tb_Roof.Controls.Add(this.txt_Thickness4);
             this.tb_Roof.Controls.Add(this.cmb_RoofMaterial4);
             this.tb_Roof.Controls.Add(this.cmb_RoofMaterial3);
             this.tb_Roof.Controls.Add(this.cmb_RoofMaterial2);
             this.tb_Roof.Controls.Add(this.lbl_Thickness);
-            this.tb_Roof.Controls.Add(this.txt_Thickness);
+            this.tb_Roof.Controls.Add(this.txt_Thickness1);
             this.tb_Roof.Controls.Add(this.cmb_RoofMaterial1);
             this.tb_Roof.Location = new System.Drawing.Point(4, 22);
             this.tb_Roof.Name = "tb_Roof";
             this.tb_Roof.Padding = new System.Windows.Forms.Padding(3);
-            this.tb_Roof.Size = new System.Drawing.Size(638, 236);
+            this.tb_Roof.Size = new System.Drawing.Size(429, 236);
             this.tb_Roof.TabIndex = 0;
             this.tb_Roof.Text = "Roof";
             this.tb_Roof.UseVisualStyleBackColor = true;
+            // 
+            // lbl_RoofLenght
+            // 
+            this.lbl_RoofLenght.AutoSize = true;
+            this.lbl_RoofLenght.Location = new System.Drawing.Point(325, 46);
+            this.lbl_RoofLenght.Name = "lbl_RoofLenght";
+            this.lbl_RoofLenght.Size = new System.Drawing.Size(62, 13);
+            this.lbl_RoofLenght.TabIndex = 17;
+            this.lbl_RoofLenght.Text = "Roof lenght";
+            // 
+            // txt_RoofLenght
+            // 
+            this.txt_RoofLenght.Location = new System.Drawing.Point(361, 64);
+            this.txt_RoofLenght.Name = "txt_RoofLenght";
+            this.txt_RoofLenght.Size = new System.Drawing.Size(62, 20);
+            this.txt_RoofLenght.TabIndex = 16;
+            // 
+            // lbl_RoofWidth
+            // 
+            this.lbl_RoofWidth.AutoSize = true;
+            this.lbl_RoofWidth.Location = new System.Drawing.Point(329, 7);
+            this.lbl_RoofWidth.Name = "lbl_RoofWidth";
+            this.lbl_RoofWidth.Size = new System.Drawing.Size(58, 13);
+            this.lbl_RoofWidth.TabIndex = 15;
+            this.lbl_RoofWidth.Text = "Roof width";
+            // 
+            // txt_RoofWidth
+            // 
+            this.txt_RoofWidth.Location = new System.Drawing.Point(361, 23);
+            this.txt_RoofWidth.Name = "txt_RoofWidth";
+            this.txt_RoofWidth.Size = new System.Drawing.Size(62, 20);
+            this.txt_RoofWidth.TabIndex = 14;
+            // 
+            // btn_SaveRoof
+            // 
+            this.btn_SaveRoof.Location = new System.Drawing.Point(332, 207);
+            this.btn_SaveRoof.Name = "btn_SaveRoof";
+            this.btn_SaveRoof.Size = new System.Drawing.Size(91, 23);
+            this.btn_SaveRoof.TabIndex = 13;
+            this.btn_SaveRoof.Text = "Save ";
+            this.btn_SaveRoof.UseVisualStyleBackColor = true;
+            this.btn_SaveRoof.Click += new System.EventHandler(this.btn_SaveRoof_Click_1);
             // 
             // label3
             // 
@@ -151,12 +203,12 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Thickness";
             // 
-            // textBox3
+            // txt_Thickness2
             // 
-            this.textBox3.Location = new System.Drawing.Point(157, 67);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(62, 20);
-            this.textBox3.TabIndex = 10;
+            this.txt_Thickness2.Location = new System.Drawing.Point(157, 67);
+            this.txt_Thickness2.Name = "txt_Thickness2";
+            this.txt_Thickness2.Size = new System.Drawing.Size(62, 20);
+            this.txt_Thickness2.TabIndex = 10;
             // 
             // label2
             // 
@@ -167,12 +219,12 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Thickness";
             // 
-            // textBox2
+            // txt_Thickness3
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 107);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(62, 20);
-            this.textBox2.TabIndex = 8;
+            this.txt_Thickness3.Location = new System.Drawing.Point(154, 107);
+            this.txt_Thickness3.Name = "txt_Thickness3";
+            this.txt_Thickness3.Size = new System.Drawing.Size(62, 20);
+            this.txt_Thickness3.TabIndex = 8;
             // 
             // label1
             // 
@@ -183,12 +235,12 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Thickness";
             // 
-            // textBox1
+            // txt_Thickness4
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(62, 20);
-            this.textBox1.TabIndex = 6;
+            this.txt_Thickness4.Location = new System.Drawing.Point(154, 148);
+            this.txt_Thickness4.Name = "txt_Thickness4";
+            this.txt_Thickness4.Size = new System.Drawing.Size(62, 20);
+            this.txt_Thickness4.TabIndex = 6;
             // 
             // cmb_RoofMaterial4
             // 
@@ -223,12 +275,12 @@
             this.lbl_Thickness.TabIndex = 2;
             this.lbl_Thickness.Text = "Thickness";
             // 
-            // txt_Thickness
+            // txt_Thickness1
             // 
-            this.txt_Thickness.Location = new System.Drawing.Point(157, 26);
-            this.txt_Thickness.Name = "txt_Thickness";
-            this.txt_Thickness.Size = new System.Drawing.Size(62, 20);
-            this.txt_Thickness.TabIndex = 1;
+            this.txt_Thickness1.Location = new System.Drawing.Point(157, 26);
+            this.txt_Thickness1.Name = "txt_Thickness1";
+            this.txt_Thickness1.Size = new System.Drawing.Size(62, 20);
+            this.txt_Thickness1.TabIndex = 1;
             // 
             // cmb_RoofMaterial1
             // 
@@ -240,6 +292,11 @@
             // 
             // tb_Wall
             // 
+            this.tb_Wall.Controls.Add(this.lbl_WallLenght);
+            this.tb_Wall.Controls.Add(this.txt_WallLenght);
+            this.tb_Wall.Controls.Add(this.lbl_WallWidth);
+            this.tb_Wall.Controls.Add(this.txt_WallWidth);
+            this.tb_Wall.Controls.Add(this.btn_SaveWall);
             this.tb_Wall.Controls.Add(this.label4);
             this.tb_Wall.Controls.Add(this.textBox4);
             this.tb_Wall.Controls.Add(this.label5);
@@ -255,10 +312,52 @@
             this.tb_Wall.Location = new System.Drawing.Point(4, 22);
             this.tb_Wall.Name = "tb_Wall";
             this.tb_Wall.Padding = new System.Windows.Forms.Padding(3);
-            this.tb_Wall.Size = new System.Drawing.Size(638, 236);
+            this.tb_Wall.Size = new System.Drawing.Size(429, 236);
             this.tb_Wall.TabIndex = 1;
             this.tb_Wall.Text = "Wall";
             this.tb_Wall.UseVisualStyleBackColor = true;
+            // 
+            // lbl_WallLenght
+            // 
+            this.lbl_WallLenght.AutoSize = true;
+            this.lbl_WallLenght.Location = new System.Drawing.Point(325, 48);
+            this.lbl_WallLenght.Name = "lbl_WallLenght";
+            this.lbl_WallLenght.Size = new System.Drawing.Size(60, 13);
+            this.lbl_WallLenght.TabIndex = 28;
+            this.lbl_WallLenght.Text = "Wall lenght";
+            // 
+            // txt_WallLenght
+            // 
+            this.txt_WallLenght.Location = new System.Drawing.Point(361, 66);
+            this.txt_WallLenght.Name = "txt_WallLenght";
+            this.txt_WallLenght.Size = new System.Drawing.Size(62, 20);
+            this.txt_WallLenght.TabIndex = 27;
+            // 
+            // lbl_WallWidth
+            // 
+            this.lbl_WallWidth.AutoSize = true;
+            this.lbl_WallWidth.Location = new System.Drawing.Point(329, 9);
+            this.lbl_WallWidth.Name = "lbl_WallWidth";
+            this.lbl_WallWidth.Size = new System.Drawing.Size(56, 13);
+            this.lbl_WallWidth.TabIndex = 26;
+            this.lbl_WallWidth.Text = "Wall width";
+            // 
+            // txt_WallWidth
+            // 
+            this.txt_WallWidth.Location = new System.Drawing.Point(361, 25);
+            this.txt_WallWidth.Name = "txt_WallWidth";
+            this.txt_WallWidth.Size = new System.Drawing.Size(62, 20);
+            this.txt_WallWidth.TabIndex = 25;
+            // 
+            // btn_SaveWall
+            // 
+            this.btn_SaveWall.Location = new System.Drawing.Point(332, 209);
+            this.btn_SaveWall.Name = "btn_SaveWall";
+            this.btn_SaveWall.Size = new System.Drawing.Size(91, 23);
+            this.btn_SaveWall.TabIndex = 24;
+            this.btn_SaveWall.Text = "Save ";
+            this.btn_SaveWall.UseVisualStyleBackColor = true;
+            this.btn_SaveWall.Click += new System.EventHandler(this.btn_SaveWall_Click);
             // 
             // label4
             // 
@@ -358,6 +457,11 @@
             // 
             // tb_Floor
             // 
+            this.tb_Floor.Controls.Add(this.lbl_FloorLenght);
+            this.tb_Floor.Controls.Add(this.txt_FloorLenght);
+            this.tb_Floor.Controls.Add(this.lbl_FloorWidth);
+            this.tb_Floor.Controls.Add(this.txt_FloorWidth);
+            this.tb_Floor.Controls.Add(this.btn_FloorSave);
             this.tb_Floor.Controls.Add(this.label8);
             this.tb_Floor.Controls.Add(this.textBox8);
             this.tb_Floor.Controls.Add(this.label9);
@@ -373,10 +477,51 @@
             this.tb_Floor.Location = new System.Drawing.Point(4, 22);
             this.tb_Floor.Name = "tb_Floor";
             this.tb_Floor.Padding = new System.Windows.Forms.Padding(3);
-            this.tb_Floor.Size = new System.Drawing.Size(638, 236);
+            this.tb_Floor.Size = new System.Drawing.Size(429, 236);
             this.tb_Floor.TabIndex = 2;
             this.tb_Floor.Text = "Floor";
             this.tb_Floor.UseVisualStyleBackColor = true;
+            // 
+            // lbl_FloorLenght
+            // 
+            this.lbl_FloorLenght.AutoSize = true;
+            this.lbl_FloorLenght.Location = new System.Drawing.Point(325, 49);
+            this.lbl_FloorLenght.Name = "lbl_FloorLenght";
+            this.lbl_FloorLenght.Size = new System.Drawing.Size(62, 13);
+            this.lbl_FloorLenght.TabIndex = 28;
+            this.lbl_FloorLenght.Text = "Floor lenght";
+            // 
+            // txt_FloorLenght
+            // 
+            this.txt_FloorLenght.Location = new System.Drawing.Point(361, 67);
+            this.txt_FloorLenght.Name = "txt_FloorLenght";
+            this.txt_FloorLenght.Size = new System.Drawing.Size(62, 20);
+            this.txt_FloorLenght.TabIndex = 27;
+            // 
+            // lbl_FloorWidth
+            // 
+            this.lbl_FloorWidth.AutoSize = true;
+            this.lbl_FloorWidth.Location = new System.Drawing.Point(329, 10);
+            this.lbl_FloorWidth.Name = "lbl_FloorWidth";
+            this.lbl_FloorWidth.Size = new System.Drawing.Size(58, 13);
+            this.lbl_FloorWidth.TabIndex = 26;
+            this.lbl_FloorWidth.Text = "Floor width";
+            // 
+            // txt_FloorWidth
+            // 
+            this.txt_FloorWidth.Location = new System.Drawing.Point(361, 26);
+            this.txt_FloorWidth.Name = "txt_FloorWidth";
+            this.txt_FloorWidth.Size = new System.Drawing.Size(62, 20);
+            this.txt_FloorWidth.TabIndex = 25;
+            // 
+            // btn_FloorSave
+            // 
+            this.btn_FloorSave.Location = new System.Drawing.Point(332, 210);
+            this.btn_FloorSave.Name = "btn_FloorSave";
+            this.btn_FloorSave.Size = new System.Drawing.Size(91, 23);
+            this.btn_FloorSave.TabIndex = 24;
+            this.btn_FloorSave.Text = "Save ";
+            this.btn_FloorSave.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -474,26 +619,54 @@
             this.comboBox11.Size = new System.Drawing.Size(121, 21);
             this.comboBox11.TabIndex = 12;
             // 
-            // btn_Save
+            // btn_Calculate
             // 
-            this.btn_Save.Location = new System.Drawing.Point(144, 207);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(75, 23);
-            this.btn_Save.TabIndex = 13;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            this.btn_Calculate.Location = new System.Drawing.Point(594, 384);
+            this.btn_Calculate.Name = "btn_Calculate";
+            this.btn_Calculate.Size = new System.Drawing.Size(75, 23);
+            this.btn_Calculate.TabIndex = 18;
+            this.btn_Calculate.Text = "Calculate ";
+            this.btn_Calculate.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Constructions
+            // 
+            this.lbl_Constructions.AutoSize = true;
+            this.lbl_Constructions.Location = new System.Drawing.Point(148, 265);
+            this.lbl_Constructions.Name = "lbl_Constructions";
+            this.lbl_Constructions.Size = new System.Drawing.Size(71, 13);
+            this.lbl_Constructions.TabIndex = 18;
+            this.lbl_Constructions.Text = "Constructions";
+            // 
+            // rtb_Constructions
+            // 
+            this.rtb_Constructions.Location = new System.Drawing.Point(151, 282);
+            this.rtb_Constructions.Name = "rtb_Constructions";
+            this.rtb_Constructions.Size = new System.Drawing.Size(437, 96);
+            this.rtb_Constructions.TabIndex = 19;
+            this.rtb_Constructions.Text = "";
+            // 
+            // btn_CreateConstruction
+            // 
+            this.btn_CreateConstruction.Location = new System.Drawing.Point(594, 282);
+            this.btn_CreateConstruction.Name = "btn_CreateConstruction";
+            this.btn_CreateConstruction.Size = new System.Drawing.Size(75, 39);
+            this.btn_CreateConstruction.TabIndex = 20;
+            this.btn_CreateConstruction.Text = "Create construction";
+            this.btn_CreateConstruction.UseVisualStyleBackColor = true;
+            this.btn_CreateConstruction.Click += new System.EventHandler(this.btn_CreateConstruction_Click);
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(890, 313);
+            this.ClientSize = new System.Drawing.Size(674, 419);
+            this.Controls.Add(this.btn_CreateConstruction);
+            this.Controls.Add(this.rtb_Constructions);
+            this.Controls.Add(this.lbl_Constructions);
+            this.Controls.Add(this.btn_Calculate);
             this.Controls.Add(this.tb_Constructions);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_LoadBuilding);
-            this.Controls.Add(this.btn_NewBuilding);
             this.Name = "MainView";
             this.Text = "Form1";
             this.tb_Constructions.ResumeLayout(false);
@@ -504,27 +677,26 @@
             this.tb_Floor.ResumeLayout(false);
             this.tb_Floor.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_NewBuilding;
         private System.Windows.Forms.Button btn_LoadBuilding;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.TabControl tb_Constructions;
         private System.Windows.Forms.TabPage tb_Roof;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_Thickness2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_Thickness3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Thickness4;
         private System.Windows.Forms.ComboBox cmb_RoofMaterial4;
         private System.Windows.Forms.ComboBox cmb_RoofMaterial3;
         private System.Windows.Forms.ComboBox cmb_RoofMaterial2;
         private System.Windows.Forms.Label lbl_Thickness;
-        private System.Windows.Forms.TextBox txt_Thickness;
+        private System.Windows.Forms.TextBox txt_Thickness1;
         private System.Windows.Forms.ComboBox cmb_RoofMaterial1;
         private System.Windows.Forms.TabPage tb_Wall;
         private System.Windows.Forms.Label label4;
@@ -552,7 +724,25 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_SaveRoof;
+        private System.Windows.Forms.Label lbl_RoofLenght;
+        private System.Windows.Forms.TextBox txt_RoofLenght;
+        private System.Windows.Forms.Label lbl_RoofWidth;
+        private System.Windows.Forms.TextBox txt_RoofWidth;
+        private System.Windows.Forms.Button btn_Calculate;
+        private System.Windows.Forms.Label lbl_Constructions;
+        private System.Windows.Forms.RichTextBox rtb_Constructions;
+        private System.Windows.Forms.Button btn_CreateConstruction;
+        private System.Windows.Forms.Label lbl_WallLenght;
+        private System.Windows.Forms.TextBox txt_WallLenght;
+        private System.Windows.Forms.Label lbl_WallWidth;
+        private System.Windows.Forms.TextBox txt_WallWidth;
+        private System.Windows.Forms.Button btn_SaveWall;
+        private System.Windows.Forms.Label lbl_FloorLenght;
+        private System.Windows.Forms.TextBox txt_FloorLenght;
+        private System.Windows.Forms.Label lbl_FloorWidth;
+        private System.Windows.Forms.TextBox txt_FloorWidth;
+        private System.Windows.Forms.Button btn_FloorSave;
     }
 }
 

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace EnergyLoss.Materials
 {
-    public class Material // : IMaterial
+    public class Material  //: IMaterial
     {
+        private static int _counter;
         public int ID { get; set; } = 0;
         public double ThermalResistance => Thickness/Lambda;
 
@@ -15,11 +16,36 @@ namespace EnergyLoss.Materials
         public string Name { get; set; }
         public double Lambda { get; set; }
 
+        public Material()
+        {
+            _counter++;
+            ID = _counter;
+        }
+
         public Material(string name, double lambda)
         {
-            ID++;
+            _counter++;
+            ID = _counter;
             Name = name;
             Lambda = lambda;
+        }
+        public Material(string name, double lambda, double thickness)
+        {
+            
+            _counter++;
+            ID = _counter;
+            Name = name;
+            Lambda = lambda;
+            Thickness = thickness;
+        }
+         
+        override
+        public string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{Name}");
+            sb.Append($"{ThermalResistance}");
+            return sb.ToString();
         }
     }
 }

@@ -14,12 +14,13 @@ namespace EnergyLoss
     public partial class MainView : Form
     {
         private MainViewModel _mainViewModel;
+
         public MainView(MainViewModel mainViewModel)
         {
             _mainViewModel = mainViewModel;
             //_materialRepository = materialRepository;
             InitializeComponent();
-            AddToCombos(MaterialRepository.GetMaterials());
+            AddToCombos();
             
         }
 
@@ -32,34 +33,49 @@ namespace EnergyLoss
         {
         }
 
-        private void btn_Save_Click(object sender, EventArgs e)
+        private void AddToCombos()
         {
-            _mainViewModel.RoofMaterial.Add((Material)cmb_RoofMaterial1.SelectedValue);
-            _mainViewModel.RoofMaterial.Add((Material)cmb_RoofMaterial2.SelectedValue);
-            _mainViewModel.RoofMaterial.Add((Material)cmb_RoofMaterial3.SelectedValue);
-            _mainViewModel.RoofMaterial.Add((Material)cmb_RoofMaterial4.SelectedValue);
-
-            MessageBox.Show($"{}");
+            AddMaterialToCombo(cmb_RoofMaterial1);
+            AddMaterialToCombo(cmb_RoofMaterial2);
+            AddMaterialToCombo(cmb_RoofMaterial3);
+            AddMaterialToCombo(cmb_RoofMaterial4);
+        }
+        
+        private void AddMaterialToCombo(ComboBox comboBox)
+        {
+            comboBox.DataSource = _mainViewModel.GetMaterials();
+            comboBox.DisplayMember = nameof(Material.Name);
+            comboBox.ValueMember = nameof(Material.ID);
+            comboBox.BindingContext = new BindingContext();
         }
 
-        private void AddToCombos(List<Material> materials)
+        private double ConvertTextBoxToDouble(TextBox textBox)
         {
-            foreach(Material m in materials)
-            {
-                cmb_RoofMaterial1.Items.Add(m.Name);
-            } //comboboxy od jedna do dva.
-            foreach(Material m in materials)
-            {
-                cmb_RoofMaterial2.Items.Add(m.Name);
-            }
-            foreach (Material m in materials)
-            {
-                cmb_RoofMaterial3.Items.Add(m.Name);
-            }
-            foreach (Material m in materials)
-            {
-                cmb_RoofMaterial4.Items.Add(m.Name);
-            }
+           return double.Parse(textBox.Text);
+        }
+
+        private void btn_SaveRoof_Click_1(object sender, EventArgs e)
+        {
+            _mainViewModel.RoofMaterialId.Add((int)cmb_RoofMaterial1.SelectedValue);
+            _mainViewModel.RoofMaterialThickness.Add(ConvertTextBoxToDouble(txt_Thickness1));
+            _mainViewModel.RoofWidth = ConvertTextBoxToDouble(txt_RoofWidth);
+            _mainViewModel.RoofLenght = ConvertTextBoxToDouble(txt_RoofLenght);
+        }
+
+        private void btn_SaveWall_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_CreateConstruction_Click(object sender, EventArgs e)
+        {
+            _mainViewModel.CreateRoof();
+            WriteConstructions();
+        }
+
+        private void WriteConstructions()
+        {
+            rtb_Constructions.AppendText(_mainViewModel.RoofToString());
         }
     }
 }
