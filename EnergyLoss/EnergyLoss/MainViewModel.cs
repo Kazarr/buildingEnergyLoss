@@ -59,6 +59,16 @@ namespace EnergyLoss
             Roof = new Roof(MakeMaterialsForRoof(), nameof(Roof), RoofLenght, RoofWidth);
         }
 
+        public void CreateWall()
+        {
+            Wall = new Wall(MakeMaterialsForWall(), nameof(Wall), WallLenght, WallWidth);
+        }
+
+        public void CreateFloor()
+        {
+            Floor = new Floor(MakeMaterialsForFloor(), nameof(Floor), FloorLenght, FloorWidth);
+        }
+
         private List<Material> MakeMaterialsForRoof()
         {
             List<Material> ret = new List<Material>();
@@ -68,9 +78,35 @@ namespace EnergyLoss
             }
             return ret;
         }
+        private List<Material> MakeMaterialsForWall()
+        {
+            List<Material> ret = new List<Material>();
+            for (int i = 0; i < WallMaterialId.Count; i++)
+            {
+                ret.Add(CreateMaterial(WallMaterialId[i], WallMaterialThickness[i]));
+            }
+            return ret;
+        }
+        private List<Material> MakeMaterialsForFloor()
+        {
+            List<Material> ret = new List<Material>();
+            for (int i = 0; i < FloorMaterialId.Count; i++)
+            {
+                ret.Add(CreateMaterial(FloorMaterialId[i], FloorMaterialThickness[i]));
+            }
+            return ret;
+        }
         public string RoofToString()
         {
             return Roof.ToString();
+        }
+        public string WallToString()
+        {
+            return Wall.ToString();
+        }
+        public string FloorToString()
+        {
+            return Floor.ToString();
         }
     }
 }
